@@ -60,6 +60,14 @@ const renderEpisodes = (episodes) => {
   list.innerHTML = episodes
     .map(
       (episode) => `
+      <article class="episode-row" tabindex="0">
+        <div class="meta">${formatDate(episode.date)}</div>
+        <div>
+          <p class="eyebrow">${episode.season || "Episode"}</p>
+          <h3>${episode.title}</h3>
+          <p class="description">${episode.description}</p>
+        </div>
+        <div class="meta">${episode.duration || "—"}</div>
       <article class="episode-card" tabindex="0">
         <div>
           <p class="eyebrow">${episode.season || "Episode"}</p>
