@@ -68,6 +68,13 @@ const renderEpisodes = (episodes) => {
           <p class="description">${episode.description}</p>
         </div>
         <div class="meta">${episode.duration || "—"}</div>
+      <article class="episode-card" tabindex="0">
+        <div>
+          <p class="eyebrow">${episode.season || "Episode"}</p>
+          <h3>${episode.title}</h3>
+          <p class="meta">${formatDate(episode.date)}${episode.duration ? ` · ${episode.duration}` : ""}</p>
+          <p class="description">${episode.description}</p>
+        </div>
         <div class="episode-actions">
           <a class="btn btn-outline" href="${episode.spotifyUrl}" target="_blank" rel="noreferrer">Play</a>
         </div>
