@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jungleland Podcast — Spotify Original</title>
+    <meta
+      name="description"
+      content="Jungleland is a Spotify Original exploring audio innovation and creator strategy. Stream the latest episode and explore the full archive."
+    />
+    <meta property="og:title" content="Jungleland Podcast" />
+    <meta
+      property="og:description"
+      content="Explore the latest Jungleland episodes, discover the archive, and listen on Spotify."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://open.spotify.com/show/1IDuMMnrRNRwuI9v4rtfE7" />
+    <meta property="og:image" content="/favicon.svg" />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#episodes">Skip to episodes</a>
+    <header class="site-header">
+      <nav class="nav">
+        <a class="logo" href="#home">Jungleland</a>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#episodes">Episodes</a>
+          <a href="#about">About</a>
+          <a href="#listen">Listen</a>
+        </div>
+        <a class="btn btn-primary" href="https://open.spotify.com/show/1IDuMMnrRNRwuI9v4rtfE7" target="_blank" rel="noreferrer">
+          Listen on Spotify
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <div class="hero-kicker">
+            <span class="eyebrow">Spotify Original</span>
+            <span class="divider"></span>
+            <span class="eyebrow">Premium Audio Briefings</span>
+          </div>
+          <h1>Jungleland Podcast</h1>
+          <p class="lead">
+            A sharp, weekly series on audio culture, creator growth, and the product decisions shaping the future of
+            sound.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://open.spotify.com/show/1IDuMMnrRNRwuI9v4rtfE7" target="_blank" rel="noreferrer">
+              Listen on Spotify
+            </a>
+            <a class="btn btn-outline" href="#episodes">Explore episodes</a>
+          </div>
+          <div class="hero-metrics">
+            <div>
+              <p class="eyebrow">Release cadence</p>
+              <p>Weekly drops · Thursdays</p>
+            </div>
+            <div>
+              <p class="eyebrow">Focus</p>
+              <p>Audio strategy, production, storytelling</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-panel" data-latest></div>
+      </section>
+
+      <section id="episodes" class="episodes-section">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Episode archive</p>
+            <h2>All episodes</h2>
+          </div>
+          <div class="filter-bar">
+            <label class="sr-only" for="search">Search episodes</label>
+            <input
+              id="search"
+              data-search
+              type="search"
+              placeholder="Search by title or description"
+              aria-label="Search episodes"
+            />
+            <label class="sr-only" for="season">Filter by season</label>
+            <select id="season" data-season aria-label="Filter by season">
+              <option value="all">All seasons</option>
+            </select>
+          </div>
+        </div>
+        <div class="episodes-meta">
+          <p class="episode-count" data-episode-count></p>
+          <p class="eyebrow">Updated automatically from episodes.js</p>
+        </div>
+        <div class="episodes-head" aria-hidden="true">
+          <span>Date</span>
+          <span>Episode</span>
+          <span>Duration</span>
+          <span></span>
+        </div>
+        <div class="episodes-list" data-episode-list></div>
+      </section>
+
+      <section id="about" class="about-section">
+        <div class="about-card">
+          <h2>About the show</h2>
+          <p>
+            Jungleland is a Spotify Original built for creators and audio obsessives. Every episode delivers clear
+            takeaways on production, product strategy, and the culture pushing podcasting forward.
+          </p>
+          <div class="details">
+            <div>
+              <span class="eyebrow">Format</span>
+              <p>Concise interviews, studio notes, and industry briefings.</p>
+            </div>
+            <div>
+              <span class="eyebrow">Topics</span>
+              <p>Audio tech, listener growth, storytelling, and community.</p>
+            </div>
+            <div>
+              <span class="eyebrow">Availability</span>
+              <p>Stream on Spotify. Subscribe to catch every weekly drop.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="listen" class="listen-section">
+        <div class="listen-content">
+          <h2>Listen now</h2>
+          <p>
+            Stream the full catalog directly on Spotify. Subscribe to stay updated whenever a new episode drops.
+          </p>
+          <a class="btn btn-primary" href="https://open.spotify.com/show/1IDuMMnrRNRwuI9v4rtfE7" target="_blank" rel="noreferrer">
+            Listen on Spotify
+          </a>
+        </div>
+        <div class="listen-embed">
+          <iframe
+            title="Spotify show player"
+            src="https://open.spotify.com/embed/show/1IDuMMnrRNRwuI9v4rtfE7"
+            loading="lazy"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          ></iframe>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2024 Jungleland Podcast. All rights reserved.</p>
+      <a href="#home">Back to top</a>
+    </footer>
+
+    <script src="episodes.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
