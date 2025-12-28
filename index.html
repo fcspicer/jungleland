@@ -140,3 +140,225 @@
     <script src="app.js"></script>
   </body>
 </html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jungleland Podcast</title>
+  <meta name="description" content="A sharp, modern podcast landing page with the latest episode highlighted and a full episode archive." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Jungleland Podcast" />
+  <meta property="og:description" content="Listen to the latest episode and browse the full archive." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="og-image.png" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="mark" aria-hidden="true"></div>
+        <div class="brand-text">
+          <div class="brand-title">Jungleland</div>
+          <div class="brand-subtitle">Podcast</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#episodes">Episodes</a>
+        <a href="#about">About</a>
+        <a href="#listen">Listen</a>
+      </nav>
+
+      <div class="header-cta">
+        <a class="btn btn-primary"
+           href="https://open.spotify.com/show/1IDuMMnrRNRwuI9v4rtfE7?si=c6de90bbe3514379"
+           target="_blank" rel="noopener noreferrer">
+          Listen on Spotify
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <div class="kicker">Latest episode</div>
+          <h1 class="hero-title">
+            A clean, sharp podcast hub.
+          </h1>
+          <p class="hero-lede">
+            Highlighting the newest release, with a fast, searchable archive below.
+          </p>
+
+          <div id="latestCard" class="latest-card" aria-live="polite">
+            <!-- JS injects latest episode card here -->
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary"
+               href="https://open.spotify.com/show/1IDuMMnrRNRwuI9v4rtfE7?si=c6de90bbe3514379"
+               target="_blank" rel="noopener noreferrer">
+              Open show on Spotify
+            </a>
+            <a class="btn btn-ghost" href="#episodes">Browse all episodes</a>
+          </div>
+
+          <div class="meta-row">
+            <div class="meta-pill"><span class="dot"></span> Updated automatically from episode data file</div>
+            <div class="meta-pill">Keyboard-friendly</div>
+            <div class="meta-pill">Mobile responsive</div>
+          </div>
+        </div>
+
+        <aside class="hero-right" aria-label="Spotify show player">
+          <div class="panel">
+            <div class="panel-head">
+              <div class="panel-title">Play on Spotify</div>
+              <a class="panel-link"
+                 href="https://open.spotify.com/show/1IDuMMnrRNRwuI9v4rtfE7?si=c6de90bbe3514379"
+                 target="_blank" rel="noopener noreferrer">
+                Open ↗
+              </a>
+            </div>
+
+            <!-- Spotify show embed (safe + reliable for static sites) -->
+            <iframe
+              title="Spotify show embed"
+              style="border-radius:0"
+              src="https://open.spotify.com/embed/show/1IDuMMnrRNRwuI9v4rtfE7"
+              width="100%"
+              height="352"
+              frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+            </iframe>
+
+            <p class="panel-note">
+              Tip: If you want episode-level embeds, paste each episode’s Spotify link into <code>episodes.js</code>.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- EPISODES -->
+    <section id="episodes" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Episodes</h2>
+            <p class="section-subtitle">Search and filter the archive. Latest is always highlighted above.</p>
+          </div>
+
+          <div class="controls" role="search">
+            <label class="sr-only" for="q">Search episodes</label>
+            <input id="q" class="input" type="search" placeholder="Search title or description…" autocomplete="off" />
+
+            <label class="sr-only" for="season">Season filter</label>
+            <select id="season" class="select">
+              <option value="all">All seasons</option>
+            </select>
+
+            <button id="clear" class="btn btn-ghost" type="button">Clear</button>
+          </div>
+        </div>
+
+        <div class="stats" id="stats" aria-live="polite"></div>
+
+        <div id="episodeGrid" class="episode-grid" aria-live="polite">
+          <!-- JS injects episode cards here -->
+        </div>
+
+        <div id="emptyState" class="empty" hidden>
+          <div class="empty-title">No matches</div>
+          <div class="empty-text">Try a different search or switch seasons.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section section-alt">
+      <div class="container about-grid">
+        <div>
+          <h2 class="section-title">About the show</h2>
+          <p class="section-subtitle">
+            Replace this copy with your podcast description. Keep it short, punchy, and human.
+          </p>
+
+          <div class="about-cards">
+            <div class="about-card">
+              <div class="about-label">Format</div>
+              <div class="about-value">Interviews · Stories · Insights</div>
+            </div>
+            <div class="about-card">
+              <div class="about-label">Release</div>
+              <div class="about-value">Weekly / Bi-weekly</div>
+            </div>
+            <div class="about-card">
+              <div class="about-label">Topics</div>
+              <div class="about-value">Sports · Culture · Behind-the-scenes</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-panel">
+          <div class="about-panel-title">Maintainable by design</div>
+          <ul class="list">
+            <li>Edit only <code>episodes.js</code> to add new episodes</li>
+            <li>Latest episode is chosen automatically by date</li>
+            <li>Search and season filter update instantly</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- LISTEN -->
+    <section id="listen" class="section">
+      <div class="container listen-grid">
+        <div>
+          <h2 class="section-title">Listen</h2>
+          <p class="section-subtitle">Open the show on Spotify or play from the embed above.</p>
+        </div>
+
+        <div class="listen-actions">
+          <a class="btn btn-primary"
+             href="https://open.spotify.com/show/1IDuMMnrRNRwuI9v4rtfE7?si=c6de90bbe3514379"
+             target="_blank" rel="noopener noreferrer">
+            Listen on Spotify
+          </a>
+          <a class="btn btn-ghost" href="#home">Back to top</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="footer-brand">Jungleland Podcast</div>
+        <div class="footer-muted">Built as a static site. Update episodes in <code>episodes.js</code>.</div>
+      </div>
+
+      <div class="footer-right">
+        <div class="build" id="buildStamp">Build: —</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="episodes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
